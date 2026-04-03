@@ -1,0 +1,228 @@
+@import "tailwindcss";
+
+@theme {
+  --font-headline: "Poppins", sans-serif;
+  --font-body: "Inter", sans-serif;
+
+  --color-primary: #000000;
+  --color-primary-container: #3c3b3b;
+  --color-on-primary: #ffffff;
+  --color-background: #ffffff;
+  --color-surface: #ffffff;
+  --color-surface-container: #f4f4f5;
+  --color-surface-container-low: #fafafa;
+  --color-surface-container-lowest: #ffffff;
+  --color-surface-container-high: #e4e4e7;
+  --color-surface-container-highest: #d4d4d8;
+  --color-on-surface: #0f172a;
+  --color-on-surface-variant: #52525b;
+  --color-outline-variant: #e4e4e7;
+  --color-error: #ef4444;
+
+  /* Premium Carbon Palette */
+  --color-zinc-50: #fafafa;
+  --color-zinc-100: #f4f4f5;
+  --color-zinc-200: #e4e4e7;
+  --color-zinc-300: #d4d4d8;
+  --color-zinc-400: #a1a1aa;
+  --color-zinc-500: #71717a;
+  --color-zinc-600: #52525b;
+  --color-zinc-700: #3f3f46;
+  --color-zinc-800: #27272a;
+  --color-zinc-900: #18181b;
+  --color-zinc-950: #09090b;
+}
+
+@layer base {
+
+  html,
+  body {
+    @apply bg-background text-on-surface font-body;
+    max-width: 100%;
+    overflow-x: hidden;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+  
+  /* Hide number input spinners */
+  input::-webkit-outer-spin-button,
+  input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+  input[type=number] {
+    -moz-appearance: textfield;
+  }
+
+  input, select, textarea {
+    @apply bg-zinc-50 border-2 border-zinc-100 focus:border-zinc-900 focus:ring-0 rounded-xl p-3 text-xs font-bold text-zinc-900 transition-all outline-none;
+  }
+
+  select {
+    @apply appearance-none cursor-pointer pr-10;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='currentColor'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M19 9l-7 7-7-7'%3E%3C/path%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 12px center;
+    background-size: 16px;
+  }
+
+  *::-webkit-scrollbar {
+    display: none;
+    /* Chrome, Safari, Opera */
+  }
+
+  * {
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+
+  ::selection {
+    background: rgba(0, 123, 255, 0.1);
+    color: #007bff;
+  }
+
+  @keyframes progress {
+    0% {
+      transform: translateX(-100%);
+    }
+
+    50% {
+      transform: translateX(0%);
+    }
+
+    100% {
+      transform: translateX(100%);
+    }
+  }
+
+  @keyframes scan {
+
+    0%,
+    100% {
+      top: 10%;
+      opacity: 0.2;
+    }
+
+    50% {
+      top: 90%;
+      opacity: 1;
+    }
+  }
+
+  @keyframes l5 {
+    0% {
+      box-shadow: 20px 0 #fff, -20px 0 rgba(255, 255, 255, 0.2);
+      background: #fff
+    }
+
+    33% {
+      box-shadow: 20px 0 #fff, -20px 0 rgba(255, 255, 255, 0.2);
+      background: rgba(255, 255, 255, 0.2)
+    }
+
+    66% {
+      box-shadow: 20px 0 rgba(255, 255, 255, 0.2), -20px 0 #fff;
+      background: rgba(255, 255, 255, 0.2)
+    }
+
+    100% {
+      box-shadow: 20px 0 rgba(255, 255, 255, 0.2), -20px 0 #fff;
+      background: #fff
+    }
+  }
+
+  button {
+    cursor: pointer !important;
+  }
+}
+
+.material-symbols-outlined {
+  font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+  display: inline-block;
+  line-height: 1;
+  text-transform: none;
+  letter-spacing: normal;
+  word-wrap: normal;
+  white-space: nowrap;
+  direction: ltr;
+}
+
+/* Hide Google Translate Toolbar & UI Elements — Nuclear Option */
+.goog-te-banner-frame,
+.goog-te-banner-frame.skiptranslate,
+.goog-te-balloon-frame,
+.goog-te-menu-frame,
+.goog-te-spinner-pos,
+.goog-te-gadget-icon,
+.google-translate-container,
+.goog-te-gadget,
+.goog-te-gadget-simple,
+.goog-logo-link,
+#goog-gt-,
+#goog-gt-tt,
+#google_translate_element,
+iframe.skiptranslate,
+.VIpgJd-ZVi9od-ORHb-OEVmcd,
+.VIpgJd-ZVi9od-l4eHX-hSRGPd,
+.VIpgJd-ZVi9od-SmfZ-OEVmcd,
+.VIpgJd-ZVi9od-aZ2wEe-wOHMyf,
+.VIpgJd-ZVi9od-aZ2wEe-OiiCO,
+div[id^="goog-gt-"],
+div[class*="VIpgJd"] {
+  display: block !important; /* Must be block to allow rendering */
+  visibility: hidden !important;
+  opacity: 0 !important;
+  height: 1px !important;
+  width: 1px !important;
+  pointer-events: none !important;
+  position: absolute !important;
+  top: -10000px !important;
+  left: -10000px !important;
+  overflow: hidden !important;
+}
+
+/* Ensure the underlying logic select box exists but is completely unreachable */
+.goog-te-combo,
+select.goog-te-combo {
+  display: block !important;
+  opacity: 0 !important;
+  width: 1px !important;
+  height: 1px !important;
+  position: absolute !important;
+  top: -10000px !important;
+  left: -10000px !important;
+  pointer-events: none !important;
+}
+
+/* Prevent Google Translate from pushing body down */
+body {
+  top: 0 !important;
+  position: static !important;
+}
+
+.goog-tooltip,
+.goog-tooltip:hover {
+  display: none !important;
+}
+
+.goog-text-highlight {
+  background-color: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+  font-family: inherit !important;
+  font-size: inherit !important;
+  font-weight: inherit !important;
+}
+
+/* Fix text resizing from Google Translate <font> wrapping */
+font {
+  font-family: inherit !important;
+  font-size: inherit !important;
+  font-weight: inherit !important;
+  line-height: inherit !important;
+  color: inherit !important;
+}
+
+* {
+  -webkit-tap-highlight-color: transparent;
+}

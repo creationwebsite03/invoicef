@@ -1,0 +1,108 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    // ===============================================================
+    // Assumed Data Model
+    // ===============================================================
+    //
+    // Collection: /users/{uid}
+    // Document ID: uid
+    // Fields:
+    //   - uid: string (required)
+    //   - email: string (required)
+    //   - displayName: string (optional)
+    //   - photoURL: string (optional)
+    //   - createdAt: string (optional)
+    //
+    // Collection: /users/{uid}/invoices/{invoiceId}
+    // Document ID: invoiceId
+    // Fields:
+    //   - id: string (optional)
+    //   - userId: string (required)
+    //   - type: string (required, enum: invoice, receipt, quotation, estimate)
+    //   - template: string (required, enum: modern, professional, creative)
+    //   - invoiceNumber: string (required)
+    //   - total: number (required)
+    //   - [other fields as defined in Invoice type]
+    //
+    // ===============================================================
+
+    // ===============================================================
+    // Helper Functions
+    // ===============================================================
+    
+    function isAuthenticated() {
+      return request.auth != null;
+    }
+
+    function isOwner(userId) {
+      return isAuthenticated() && request.auth.uid == userId;
+    }
+
+    function isValidEmail(email) {
+      return email is string && email.size() < 256 && email.matches("^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}$");
+    }
+
+    function isValidUrl(url) {
+      return url is string && url.size() < 2048 && (url.matches("^https://.*") || url.matches("^http://.*"));
+    }
+
+    function validStringLength(field, minLen, maxLen) {
+      return request.resource.data[field] is string &&
+        request.resource.data[field].size() >= minLen &&
+        request.resource.data[field].size() <= maxLen;
+    }
+
+    // ===============================================================
+    // Domain Validators
+    // ===============================================================
+
+    function isValidUser(data) {
+      return data.uid is string && data.uid.size() > 0 && data.uid.size() < 128 &&
+             data.email is string && isValidEmail(data.email) &&
+             (!('displayName' in data) || (data.displayName is string && data.displayName.size() < 100)) &&
+             (!('photoURL' in data) || isValidUrl(data.photoURL));
+    }
+
+    function isValidInvoice(data) {
+      return data.userId is string && data.userId == request.auth.uid &&
+             data.type in ['invoice', 'receipt', 'quotation', 'estimate'] &&
+             data.template in ['modern', 'professional', 'creative'] &&
+             data.invoiceNumber is string && data.invoiceNumber.size() > 0 && data.invoiceNumber.size() < 50 &&
+             data.total is number &&
+             (!('notes' in data) || (data.notes is string && data.notes.size() < 5000)) &&
+             (!('terms' in data) || (data.terms is string && data.terms.size() < 5000));
+    }
+
+    // ===============================================================
+    // Rules
+    // ===============================================================
+
+    // Deny all by default
+    match /{document=**} {
+      allow read, write: if false;
+    }
+
+    // User profiles
+    match /users/{uid} {
+      allow read: if isOwner(uid);
+      allow create: if isOwner(uid) && isValidUser(request.resource.data);
+      allow update: if isOwner(uid) && isValidUser(request.resource.data) && request.resource.data.uid == resource.data.uid;
+      
+      // Invoices subcollection
+      match /invoices/{invoiceId} {
+        allow read: if isOwner(uid);
+        allow create: if isOwner(uid) && isValidInvoice(request.resource.data);
+        allow update: if isOwner(uid) && isValidInvoice(request.resource.data) && request.resource.data.userId == resource.data.userId;
+        allow delete: if isOwner(uid);
+      }
+
+      // Sent Emails subcollection
+      match /sent_emails/{emailId} {
+        allow read: if isOwner(uid);
+        allow create: if isOwner(uid) && request.resource.data.userId == request.auth.uid;
+        allow delete: if isOwner(uid);
+      }
+    }
+  }
+}

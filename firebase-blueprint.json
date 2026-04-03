@@ -1,0 +1,59 @@
+{
+  "entities": {
+    "User": {
+      "title": "User",
+      "description": "User profile information",
+      "type": "object",
+      "properties": {
+        "uid": { "type": "string", "description": "Firebase Auth UID" },
+        "email": { "type": "string", "description": "User email address" },
+        "displayName": { "type": "string", "description": "User display name" },
+        "photoURL": { "type": "string", "description": "User profile photo URL" },
+        "createdAt": { "type": "string", "format": "date-time", "description": "Account creation timestamp" }
+      },
+      "required": ["uid", "email"]
+    },
+    "Invoice": {
+      "title": "Invoice",
+      "description": "Invoice document data",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string", "description": "Document ID" },
+        "userId": { "type": "string", "description": "Owner UID" },
+        "type": { "type": "string", "enum": ["invoice", "receipt", "quotation", "estimate"] },
+        "template": { "type": "string", "enum": ["modern", "professional", "creative"] },
+        "invoiceNumber": { "type": "string" },
+        "issueDate": { "type": "string" },
+        "dueDate": { "type": "string" },
+        "currency": { "type": "string" },
+        "country": { "type": "string" },
+        "businessDetails": { "type": "object" },
+        "clientDetails": { "type": "object" },
+        "items": { "type": "array" },
+        "taxRate": { "type": "number" },
+        "taxAmount": { "type": "number" },
+        "discount": { "type": "number" },
+        "shipping": { "type": "number" },
+        "subtotal": { "type": "number" },
+        "total": { "type": "number" },
+        "notes": { "type": "string" },
+        "terms": { "type": "string" },
+        "language": { "type": "string" },
+        "signature": { "type": "string" },
+        "signatoryName": { "type": "string" },
+        "createdAt": { "type": "string", "format": "date-time" }
+      },
+      "required": ["userId", "type", "invoiceNumber", "total"]
+    }
+  },
+  "firestore": {
+    "/users/{uid}": {
+      "schema": "User",
+      "description": "User profiles"
+    },
+    "/users/{uid}/invoices/{invoiceId}": {
+      "schema": "Invoice",
+      "description": "User invoices"
+    }
+  }
+}
