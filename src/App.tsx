@@ -10,8 +10,8 @@ import ErrorBoundary from "./components/ErrorBoundary";
 // Lazy loading pages for better performance
 const Home = React.lazy(() => import("./pages/Home"));
 const InvoiceGenerator = React.lazy(() => import("./pages/InvoiceGenerator"));
-import Dashboard from "./pages/Dashboard";
-import MyInvoices from "./pages/MyInvoices";
+const Dashboard = React.lazy(() => import("./pages/Dashboard"));
+const MyInvoices = React.lazy(() => import("./pages/MyInvoices"));
 const Tools = React.lazy(() => import("./pages/Tools"));
 const About = React.lazy(() => import("./pages/About"));
 const Clients = React.lazy(() => import("./pages/Clients"));

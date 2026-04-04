@@ -98,10 +98,10 @@ export default function Dashboard() {
 
    return (
       <div className="max-w-[1440px] mx-auto px-4 md:px-10 py-10 antialiased bg-zinc-50/30 min-h-screen">
-         <SEO 
-           title={t("Command Center")} 
-           description="Analyze your financial matrix and manage invoices with INVOXA's elite command center. 100% accurate calculations for global business."
-           keywords="invoice dashboard, business analysis, tax management, revenue tracking, 2026 invoice tools"
+         <SEO
+            title={t("Command Center")}
+            description="Analyze your financial matrix and manage invoices with INVOXA's elite command center. 100% accurate calculations for global business."
+            keywords="invoice dashboard, business analysis, tax management, revenue tracking, 2026 invoice tools"
          />
          {/* Top Banner / Welcome */}
          <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-10 gap-6">
