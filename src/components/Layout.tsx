@@ -57,18 +57,6 @@ export default function Layout({ children }: { children: React.ReactNode }) {
     }
   }, [setLang]);
 
-  // High-performance SEO Title Guard - Enforces primary ranking keywords
-  useEffect(() => {
-    const baseTitle = "Free Invoice Generator | Professional Invoice Maker & PDF Billing | INVOXA";
-    document.title = baseTitle;
-
-    // Periodically re-sync to prevent third-party translation or script interference
-    const titleInterval = setInterval(() => {
-      if (document.title !== baseTitle) document.title = baseTitle;
-    }, 2000);
-
-    return () => clearInterval(titleInterval);
-  }, []);
 
   useEffect(() => {
     const fetchInvoiceCount = async () => {

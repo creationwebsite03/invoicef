@@ -112,24 +112,24 @@ const InvoiceTemplate: React.FC<InvoiceTemplateProps> = ({
                   {invoice.businessDetails.name ? invoice.businessDetails.name.charAt(0) : "I"}
                 </div>
               )}
-              <div className="space-y-1">
-                <p className="text-[10px] font-black uppercase tracking-[0.3em] text-zinc-700 mb-2">{tInvoice("Bill From")}</p>
-                <h3 className={cn("font-black text-2xl tracking-tighter uppercase leading-none text-zinc-900", !invoice.businessDetails.name && "text-zinc-700 italic")}>
+              <div className="space-y-1 min-w-0">
+                <p className="text-[10px] font-black uppercase tracking-[0.3em] text-zinc-700 mb-2 truncate">{tInvoice("Bill From")}</p>
+                <h3 className={cn("font-black text-2xl tracking-tighter uppercase leading-none text-zinc-900 break-words [hyphens:auto]", !invoice.businessDetails.name && "text-zinc-700 italic")}>
                   {invoice.businessDetails.name || tInvoice("Company Name")}
                 </h3>
-                <p className={cn("text-xs leading-relaxed font-bold uppercase tracking-widest max-w-sm pt-2", !invoice.businessDetails.address ? "text-zinc-600 italic" : "text-zinc-700")}>
+                <p className={cn("text-xs leading-relaxed font-bold uppercase tracking-widest max-w-sm pt-2 break-words", !invoice.businessDetails.address ? "text-zinc-600 italic" : "text-zinc-700")}>
                   {invoice.businessDetails.address || tInvoice("Address")}
                 </p>
-                <div className="flex flex-col gap-1 pt-3">
-                  <div className="flex items-center gap-2">
-                    <span className="text-[9px] font-black text-zinc-700 uppercase tracking-widest">E:</span>
-                    <span className={cn("text-[10px] font-bold", !invoice.businessDetails.email ? "text-zinc-600 italic" : "text-zinc-700")}>
+                <div className="flex flex-col gap-1 pt-3 min-w-0">
+                  <div className="flex items-center gap-2 min-w-0">
+                    <span className="text-[9px] font-black text-zinc-700 uppercase tracking-widest shrink-0">E:</span>
+                    <span className={cn("text-[10px] font-bold truncate", !invoice.businessDetails.email ? "text-zinc-600 italic" : "text-zinc-700")}>
                       {invoice.businessDetails.email || tInvoice("Email")}
                     </span>
                   </div>
-                  <div className="flex items-center gap-2">
-                    <span className="text-[9px] font-black text-zinc-700 uppercase tracking-widest">T:</span>
-                    <span className={cn("text-[10px] font-bold", !invoice.businessDetails.phone ? "text-zinc-600 italic" : "text-zinc-700")}>
+                  <div className="flex items-center gap-2 min-w-0">
+                    <span className="text-[9px] font-black text-zinc-700 uppercase tracking-widest shrink-0">T:</span>
+                    <span className={cn("text-[10px] font-bold truncate", !invoice.businessDetails.phone ? "text-zinc-600 italic" : "text-zinc-700")}>
                       {getFlag(invoice.businessDetails.dialCode)} {invoice.businessDetails.dialCode} {invoice.businessDetails.phone || tInvoice("Phone")}
                     </span>
                   </div>
@@ -146,19 +146,19 @@ const InvoiceTemplate: React.FC<InvoiceTemplateProps> = ({
               </div>
 
               <div className="grid grid-cols-2 gap-12 w-full max-w-sm mt-8 text-left">
-                <div>
-                  <p className="text-[10px] font-black uppercase tracking-[0.3em] text-zinc-700 mb-4">{tInvoice("Bill To")}</p>
-                  <h5 className={cn("font-black text-lg uppercase tracking-tighter leading-none mb-2 text-zinc-900", !invoice.clientDetails.name && "text-zinc-700 italic")}>
+                <div className="min-w-0">
+                  <p className="text-[10px] font-black uppercase tracking-[0.3em] text-zinc-700 mb-4 truncate">{tInvoice("Bill To")}</p>
+                  <h5 className={cn("font-black text-lg uppercase tracking-tighter leading-none mb-2 text-zinc-900 break-words [hyphens:auto]", !invoice.clientDetails.name && "text-zinc-700 italic")}>
                     {invoice.clientDetails.name || tInvoice("Client Name")}
                   </h5>
-                  <p className={cn("text-xs leading-relaxed font-medium", !invoice.clientDetails.address ? "text-zinc-600 italic" : "text-zinc-600")}>
+                  <p className={cn("text-xs leading-relaxed font-medium break-words", !invoice.clientDetails.address ? "text-zinc-600 italic" : "text-zinc-600")}>
                     {invoice.clientDetails.address || tInvoice("Client Address")}
                   </p>
-                  <div className="flex flex-col gap-1.5 mt-4">
-                    <p className={cn("text-xs font-bold", !invoice.clientDetails.email ? "text-zinc-600 italic" : "text-zinc-800")}>
+                  <div className="flex flex-col gap-1.5 mt-4 min-w-0">
+                    <p className={cn("text-xs font-bold truncate", !invoice.clientDetails.email ? "text-zinc-600 italic" : "text-zinc-800")}>
                       {invoice.clientDetails.email || tInvoice("Client Email")}
                     </p>
-                    <p className={cn("text-xs font-bold", !invoice.clientDetails.phone ? "text-zinc-600 italic" : "text-zinc-800")}>
+                    <p className={cn("text-xs font-bold truncate", !invoice.clientDetails.phone ? "text-zinc-600 italic" : "text-zinc-800")}>
                       {getFlag(invoice.clientDetails.dialCode)} {invoice.clientDetails.dialCode} {invoice.clientDetails.phone || tInvoice("Client Phone")}
                     </p>
                   </div>
@@ -197,10 +197,10 @@ const InvoiceTemplate: React.FC<InvoiceTemplateProps> = ({
                 <thead>
                   <tr style={{ backgroundColor: `rgba(${r},${g},${b},0.12)`, borderBottom: `2px solid rgba(${r},${g},${b},0.25)` }}>
                     <th className="py-4 px-4 text-[9px] font-black text-zinc-700 uppercase tracking-widest w-[10%] text-left whitespace-nowrap">#</th>
-                    <th className="py-4 px-2 text-[9px] font-black text-zinc-800 uppercase tracking-widest w-[42%]">{tInvoice("Description of Goods / Services")}</th>
-                    <th className="py-4 px-4 text-[9px] font-black text-zinc-800 uppercase tracking-widest text-center w-[10%]">{tInvoice("Qty")}</th>
-                    <th className="py-4 px-4 text-[9px] font-black text-zinc-800 uppercase tracking-widest text-right w-[18%]">{tInvoice("Unit Price")}</th>
-                    <th className="py-4 px-4 text-[9px] font-black text-zinc-800 uppercase tracking-widest text-right w-[20%]">{tInvoice("Total")}</th>
+                    <th className="py-4 px-2 text-[9px] font-black text-zinc-800 uppercase tracking-widest w-[42%] break-words leading-tight">{tInvoice("Description of Goods / Services")}</th>
+                    <th className="py-4 px-4 text-[9px] font-black text-zinc-800 uppercase tracking-widest text-center w-[10%] break-words leading-tight">{tInvoice("Qty")}</th>
+                    <th className="py-4 px-4 text-[9px] font-black text-zinc-800 uppercase tracking-widest text-right w-[18%] break-words leading-tight">{tInvoice("Unit Price")}</th>
+                    <th className="py-4 px-4 text-[9px] font-black text-zinc-800 uppercase tracking-widest text-right w-[20%] break-words leading-tight">{tInvoice("Total")}</th>
                   </tr>
                 </thead>
                 <tbody className="divide-y divide-zinc-100">

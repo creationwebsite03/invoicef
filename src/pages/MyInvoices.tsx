@@ -156,16 +156,16 @@ export default function MyInvoices() {
               <div className="w-1.5 h-1.5 bg-emerald-400 rounded-full animate-pulse" />
               <span className="text-[10px] font-black uppercase tracking-widest">{t("Operational Hub")}</span>
             </div>
-            <h1 className="text-4xl lg:text-7xl font-black tracking-tighter text-zinc-900 uppercase leading-[0.85] italic">
+            <h1 className="text-4xl lg:text-7xl font-black tracking-tighter text-zinc-900 uppercase leading-none italic break-words [hyphens:auto]">
               {t("Document")}<br />
               <span className="text-zinc-400">{t("Archive")}</span>
             </h1>
           </div>
 
           <div className="flex flex-col sm:flex-row gap-4 w-full lg:w-auto">
-            <div className="bg-white p-6 rounded-3xl border border-zinc-100 shadow-xl shadow-zinc-500/5 flex flex-col justify-center min-w-[220px]">
-              <span className="text-[10px] font-black text-zinc-400 uppercase tracking-widest mb-1">{t("Capital Reserve")}</span>
-              <p className="text-2xl font-black text-zinc-900 tracking-tighter">
+            <div className="bg-white p-6 rounded-3xl border border-zinc-100 shadow-xl shadow-zinc-500/5 flex flex-col justify-center min-w-[180px] sm:min-w-[220px]">
+              <span className="text-[10px] font-black text-zinc-400 uppercase tracking-widest mb-1 break-words">{t("Capital Reserve")}</span>
+              <p className="text-2xl font-black text-zinc-900 tracking-tighter truncate">
                 {stats.totalValue.toLocaleString(undefined, { style: 'currency', currency: invoices[0]?.currency || 'USD' })}
               </p>
             </div>
@@ -241,11 +241,11 @@ export default function MyInvoices() {
                   )} />
 
                   <div className="flex justify-between items-start mb-8 relative z-10">
-                    <div className="flex flex-col gap-1">
-                      <span className="text-[10px] font-black text-zinc-300 uppercase tracking-widest">{t(inv.type || 'Doc')} Node</span>
+                    <div className="flex flex-col min-w-0 pr-4">
+                      <span className="text-[10px] font-black text-zinc-300 uppercase tracking-widest break-words">{t(inv.type || 'Doc')} Node</span>
                       <p className="text-xl font-black text-zinc-900 tracking-tighter">#{inv.id?.slice(-8).toUpperCase()}</p>
                     </div>
-                    <div className="px-4 py-1.5 rounded-full text-[9px] font-black uppercase tracking-widest flex items-center gap-2 bg-zinc-900 text-white">
+                    <div className="px-4 py-1.5 rounded-full text-[9px] font-black uppercase tracking-widest flex items-center gap-2 bg-zinc-900 text-white shrink-0 whitespace-nowrap">
                       {t(inv.type || 'Doc')}
                     </div>
                   </div>

@@ -101,12 +101,6 @@ export default function InvoiceGenerator() {
 
   const docType = getDocType();
 
-  useEffect(() => {
-    const mainTitle = docType.title;
-    const siteName = "INVOXA";
-    const keyword = docType.type === "invoice" ? "PDF Invoicing" : "Professional Generator";
-    document.title = `${mainTitle} Generator | Create Free ${keyword} | ${siteName}`;
-  }, [docType.title, docType.type]);
 
   const [invoice, setInvoice] = useState<Invoice>({
     type: docType.type,

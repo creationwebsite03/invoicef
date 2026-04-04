@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
 import { useLanguage } from "../context/LanguageContext";
 import { motion } from "motion/react";
+import SEO from "../components/SEO";
 import {
   FileText,
   Receipt,
@@ -33,6 +34,11 @@ export default function Home() {
   
   return (
     <div className="overflow-hidden">
+      <SEO 
+        title="INVOXA | World's #1 Free Professional Invoice Generator Online"
+        description="Create professional PDF invoices in 30 seconds with INVOXA. No registration required. Multi-currency, GST/VAT compliant, and global language support."
+        keywords="free invoice generator, invoice maker, online billing software, gst invoice india, receipt maker"
+      />
       {/* Hero Section */}
       <header className="pt-12 md:pt-20 pb-12 md:pb-24 px-4 sm:px-6 md:px-8 max-w-7xl mx-auto">
         <div className="grid lg:grid-cols-12 gap-8 md:gap-16 items-center">
@@ -147,11 +153,11 @@ export default function Home() {
               <div className="w-12 h-12 sm:w-14 sm:h-14 shrink-0 bg-zinc-50 flex items-center justify-center rounded-xl sm:rounded-2xl sm:mb-6 md:mb-8 group-hover:bg-zinc-900 group-hover:text-white transition-all duration-300">
                 <tool.icon size={24} />
               </div>
-              <div className="flex flex-col flex-1 sm:flex-none">
-                <h3 className="text-lg sm:text-xl md:text-2xl font-bold sm:mb-3 md:mb-4 font-headline text-zinc-900">{t(tool.title)}</h3>
-                <p className="text-xs sm:text-sm text-zinc-500 sm:mb-6 md:mb-8 flex-grow leading-relaxed hidden sm:block">{t(tool.desc)}</p>
-                <Link to={tool.link} className="flex items-center gap-2 font-bold text-zinc-900 group-hover:gap-4 transition-all text-sm mt-auto">
-                  {t("Open Tool")} <ArrowRight size={16} />
+              <div className="flex flex-col flex-1 sm:flex-none min-w-0">
+                <h3 className="text-lg sm:text-lg md:text-xl font-bold mb-2 md:mb-3 font-headline text-zinc-900 leading-[1.1] break-words [hyphens:auto]">{t(tool.title)}</h3>
+                <p className="text-[11px] sm:text-xs text-zinc-500 mb-6 md:mb-8 flex-grow leading-relaxed min-h-[3em] line-clamp-3 sm:line-clamp-none break-words">{t(tool.desc)}</p>
+                <Link to={tool.link} className="flex items-center gap-2 font-bold text-zinc-900 group-hover:gap-4 transition-all text-[11px] mt-auto uppercase tracking-widest">
+                  {t("Open Tool")} <ArrowRight size={14} />
                 </Link>
               </div>
             </motion.div>

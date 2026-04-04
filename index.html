@@ -9,7 +9,7 @@
   <meta name="referrer" content="no-referrer-when-downgrade" />
   <link rel="icon" type="image/png" href="/favicon.png" />
   <link rel="manifest" href="/manifest.json" />
-  <title class="notranslate">Free Invoice Generator | Professional Invoice Maker & PDF Billing | INVOXA</title>
+  <title class="notranslate">INVOXA | World's #1 Free Professional Invoice Generator Online</title>
 
   <!-- Performance Optimization: Preconnect to critical domains -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -119,8 +119,29 @@
     href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@600;700;800&display=swap"
     rel="stylesheet" />
 
-  <!-- Google Translate Fast Init -->
+  <!-- ULTRA FAST SYNC: Restore title and apply cookies before anything else -->
   <script type="text/javascript">
+    (function () {
+      try {
+        var lastTitle = localStorage.getItem('last_seo_title');
+        if (lastTitle) {
+          document.title = lastTitle;
+        }
+
+        var savedLang = localStorage.getItem('lang');
+        if (savedLang && savedLang !== 'en') {
+          // Hide building DOM for a split second only when translating to prevent the 'English' flash
+          document.documentElement.style.visibility = 'hidden';
+          setTimeout(function () { document.documentElement.style.visibility = 'visible'; }, 200);
+
+          var val = '/en/' + savedLang;
+          var dn = window.location.hostname;
+          document.cookie = 'googtrans=' + val + '; path=/';
+          document.cookie = 'googtrans=' + val + '; domain=' + dn + '; path=/';
+        }
+      } catch (e) { }
+    })();
+
     function googleTranslateElementInit() {
       new google.translate.TranslateElement({
         pageLanguage: 'en',
@@ -128,56 +149,24 @@
         autoDisplay: false
       }, 'google_translate_element');
     }
-
-    // ULTRA FAST SYNC: Apply cookies before anything else
-    (function () {
-      try {
-        var savedLang = localStorage.getItem('lang');
-        if (savedLang && savedLang !== 'en') {
-          var val = '/en/' + savedLang;
-          var dn = window.location.hostname;
-          document.cookie = 'googtrans=' + val + '; path=/';
-          document.cookie = 'googtrans=' + val + '; domain=' + dn + '; path=/';
-          document.cookie = 'googtrans=' + val + '; domain=.' + dn + '; path=/';
-        }
-      } catch (e) { }
-    })();
   </script>
+  <!-- Non-blocking Google Translate Load: stay idle until main UI is ready -->
   <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"
-    async></script>
+    async defer></script>
   <style>
+    /* CRITICAL PATH CSS: Inlined to prevent render-blocking Round Trips */
+    :root { --font-headline: 'Poppins', sans-serif; --font-body: 'Inter', sans-serif; }
+    html, body { margin: 0; padding: 0; background-color: #ffffff; color: #18181b; font-family: var(--font-body); -webkit-font-smoothing: antialiased; }
+    #root { min-height: 100vh; }
+    
     /* Prevent the ugly and slow Google Translate top banner from showing */
-    .goog-te-banner-frame,
-    .goog-te-balloon-frame,
-    iframe#goog-te-menu-frame,
-    .goog-te-menu-value,
-    .goog-te-gadget-icon,
-    .goog-te-gadget-simple span {
-      display: none !important;
-    }
-
-    body {
-      top: 0 !important;
-    }
-
-    /* Hide the google branding */
-    .goog-logo-link {
-      display: none !important;
-    }
-
-    .goog-te-gadget {
-      color: transparent !important;
-    }
-
-    /* Prevent text selection tooltips from Google which are slow and buggy */
-    .goog-te-balloon-frame {
-      display: none !important;
-    }
-
-    font {
-      background-color: transparent !important;
-      box-shadow: none !important;
-    }
+    .goog-te-banner-frame, .goog-te-balloon-frame, iframe#goog-te-menu-frame,
+    .goog-te-menu-value, .goog-te-gadget-icon, .goog-te-gadget-simple span { display: none !important; }
+    body { top: 0 !important; position: static !important; }
+    .goog-logo-link { display: none !important; }
+    .goog-te-gadget { color: transparent !important; }
+    .goog-te-balloon-frame { display: none !important; }
+    font { background-color: transparent !important; box-shadow: none !important; }
   </style>
 </head>
 

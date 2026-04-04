@@ -149,8 +149,8 @@ export default function Dashboard() {
                            <ArrowUpRight size={12} /> 12%
                         </div>
                      </div>
-                     <p className="text-[10px] font-black uppercase tracking-widest text-zinc-400 mb-1">{t("Net Yield")} ({globalCurrency})</p>
-                     <p className="text-3xl font-black text-zinc-900 tracking-tighter">
+                     <p className="text-[10px] font-black uppercase tracking-widest text-zinc-400 mb-1 break-words">{t("Net Yield")} ({globalCurrency})</p>
+                     <p className="text-2xl sm:text-3xl font-black text-zinc-900 tracking-tighter truncate">
                         {currentCurrencySymbol}{stats.totalRevenue.toLocaleString(undefined, { maximumFractionDigits: 0 })}
                      </p>
                   </div>
@@ -179,8 +179,8 @@ export default function Dashboard() {
                            <ArrowDownRight size={12} /> 5%
                         </div>
                      </div>
-                     <p className="text-[10px] font-black uppercase tracking-widest text-zinc-400 mb-1">{t("Avg Ticket")}</p>
-                     <p className="text-3xl font-black text-zinc-900 tracking-tighter">
+                     <p className="text-[10px] font-black uppercase tracking-widest text-zinc-400 mb-1 break-words">{t("Avg Ticket")}</p>
+                     <p className="text-2xl sm:text-3xl font-black text-zinc-900 tracking-tighter truncate">
                         {currentCurrencySymbol}{stats.avgTicket.toLocaleString(undefined, { maximumFractionDigits: 0 })}
                      </p>
                   </div>
@@ -189,13 +189,13 @@ export default function Dashboard() {
                {/* Revenue Chart Section */}
                <div className="bg-white rounded-[3rem] border border-zinc-100 shadow-sm p-10 overflow-hidden relative">
                   <div className="flex justify-between items-end mb-10">
-                     <div>
-                        <h2 className="text-lg font-black text-zinc-900 uppercase tracking-tight">{t("Revenue Velocity")}</h2>
-                        <p className="text-[10px] font-black text-zinc-400 uppercase tracking-widest mt-1">{t("Real-time telemetry of financial flow")}</p>
+                     <div className="min-w-0 flex-1">
+                        <h2 className="text-lg font-black text-zinc-900 uppercase tracking-tight break-words">{t("Revenue Velocity")}</h2>
+                        <p className="text-[10px] font-black text-zinc-400 uppercase tracking-widest mt-1 break-words">{t("Real-time telemetry of financial flow")}</p>
                      </div>
-                     <div className="text-right">
+                     <div className="text-right shrink-0">
                         <p className="text-[10px] font-black text-zinc-400 uppercase tracking-widest mb-1">{t("This Month")}</p>
-                        <p className="text-2xl font-black text-emerald-500 tracking-tighter">{currentCurrencySymbol}{stats.thisMonthRevenue.toLocaleString()}</p>
+                        <p className="text-2xl font-black text-emerald-500 tracking-tighter tabular-nums">{currentCurrencySymbol}{stats.thisMonthRevenue.toLocaleString()}</p>
                      </div>
                   </div>
 
@@ -243,21 +243,21 @@ export default function Dashboard() {
 
                   <div className="divide-y divide-zinc-50">
                      {invoices.slice(0, 5).map((inv) => (
-                        <div key={inv.id} className="px-10 py-6 flex items-center justify-between hover:bg-zinc-50/50 transition-all cursor-pointer group" onClick={() => navigate(`/tools/${inv.type}/${inv.id}`)}>
-                           <div className="flex items-center gap-5">
-                              <div className="w-10 h-10 rounded-xl bg-zinc-50 flex items-center justify-center text-zinc-300 font-bold text-xs group-hover:bg-zinc-900 group-hover:text-white transition-all">
+                        <div key={inv.id} className="px-10 py-6 flex flex-col sm:flex-row items-start sm:items-center justify-between hover:bg-zinc-50/50 transition-all cursor-pointer group gap-4" onClick={() => navigate(`/tools/${inv.type}/${inv.id}`)}>
+                           <div className="flex items-center gap-5 min-w-0">
+                              <div className="w-10 h-10 rounded-xl bg-zinc-50 flex items-center justify-center text-zinc-300 font-bold text-xs group-hover:bg-zinc-900 group-hover:text-white transition-all shrink-0">
                                  {inv.clientDetails.name.charAt(0)}
                               </div>
-                              <div>
-                                 <p className="text-sm font-bold text-zinc-900">{inv.clientDetails.name}</p>
+                              <div className="min-w-0">
+                                 <p className="text-sm font-bold text-zinc-900 truncate">{inv.clientDetails.name}</p>
                                  <p className="text-[10px] text-zinc-400 font-black uppercase tracking-widest mt-0.5">{inv.issueDate}</p>
                               </div>
                            </div>
-                           <div className="text-right flex items-center gap-6">
-                              <span className="px-2 py-0.5 rounded-full text-[8px] font-black uppercase tracking-widest border bg-zinc-900 border-zinc-900 text-white">
-                                 {inv.type}
+                           <div className="text-right flex items-center gap-4 sm:gap-6 w-full sm:w-auto mt-2 sm:mt-0">
+                              <span className="px-2 py-0.5 rounded-full text-[8px] font-black uppercase tracking-widest border bg-zinc-900 border-zinc-900 text-white shrink-0">
+                                 {t(inv.type)}
                               </span>
-                              <p className="text-sm font-normal text-zinc-900 font-headline">{inv.currency} {inv.total.toLocaleString()}</p>
+                              <p className="text-sm font-normal text-zinc-900 font-headline truncate">{inv.currency} {inv.total.toLocaleString()}</p>
                            </div>
                         </div>
                      ))}
