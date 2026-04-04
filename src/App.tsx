@@ -1,6 +1,7 @@
 import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { Toaster } from "sonner";
+import { SpeedInsights } from "@vercel/speed-insights/react";
 import Layout from "./components/Layout";
 import ScrollToTop from "./components/ScrollToTop";
 import { AuthProvider } from "./context/AuthContext";
@@ -33,6 +34,7 @@ export default function App() {
           <Router>
             <ScrollToTop />
             <Toaster position="top-right" richColors />
+            <SpeedInsights />
             <Layout>
               <React.Suspense fallback={
                 <div className="flex items-center justify-center min-h-[60vh]">
