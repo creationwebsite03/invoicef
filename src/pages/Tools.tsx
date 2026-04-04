@@ -20,15 +20,15 @@ export default function Tools() {
   const { t } = useTranslation();
 
   return (
-    <div className="pb-24 pt-12">
+    <div className="pb-12 md:pb-24 pt-8 md:pt-12">
       {/* Hero Section */}
-      <section className="max-w-7xl mx-auto px-4 md:px-8 mb-20">
+      <section className="max-w-7xl mx-auto px-4 md:px-8 mb-10 md:mb-20">
         <div className="grid grid-cols-12 gap-8">
           <div className="col-span-12 lg:col-span-8">
-            <h1 className="text-4xl sm:text-5xl md:text-7xl font-black font-headline tracking-tighter mb-6 leading-[0.9] text-zinc-900 text-balance">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-7xl font-black font-headline tracking-tighter mb-4 md:mb-6 leading-[0.9] text-zinc-900 text-balance">
               {t("Financial Arsenal")} <br className="hidden md:block" />{t("for Modern Teams.")}
             </h1>
-            <p className="text-lg md:text-xl text-zinc-500 max-w-xl font-body leading-relaxed">
+            <p className="text-sm sm:text-base md:text-lg lg:text-xl text-zinc-500 max-w-xl font-body leading-relaxed">
               {t("A curated directory of high-precision tools designed to streamline your billing, tax calculations, and global commerce operations. No bloat. Just performance.")}
             </p>
           </div>
@@ -37,76 +37,92 @@ export default function Tools() {
 
       {/* Tools Bento Grid */}
       <section className="max-w-7xl mx-auto px-4 md:px-8">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
           
           {/* Tool Card: Invoice Generator */}
-          <div className="group bg-white p-8 rounded-2xl border border-zinc-200 hover:border-zinc-300 transition-all duration-300 shadow-sm hover:shadow-md flex flex-col justify-between min-h-[320px]">
-            <div>
-              <div className="w-14 h-14 bg-zinc-100 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform text-zinc-900">
-                <FileText size={28} />
+          <div className="group bg-white p-5 sm:p-6 md:p-8 rounded-2xl border border-zinc-200 hover:border-zinc-300 transition-all duration-300 shadow-sm hover:shadow-md flex flex-row sm:flex-col gap-4 sm:gap-0 items-center sm:items-start sm:justify-between sm:min-h-[280px] md:min-h-[320px]">
+            <div className="shrink-0 sm:w-full">
+              <div className="w-11 h-11 sm:w-14 sm:h-14 bg-zinc-100 rounded-xl flex items-center justify-center sm:mb-5 md:mb-6 group-hover:scale-110 transition-transform text-zinc-900">
+                <FileText size={22} />
               </div>
-              <h3 className="text-2xl font-bold font-headline mb-3 text-zinc-900">{t("Invoice Generator")}</h3>
-              <p className="text-sm text-zinc-500 leading-snug">{t("Professional billing for freelancers and global enterprises.")}</p>
+              <h3 className="hidden sm:block text-xl md:text-2xl font-bold font-headline mb-2 md:mb-3 text-zinc-900">{t("Invoice Generator")}</h3>
+              <p className="hidden sm:block text-xs sm:text-sm text-zinc-500 leading-snug">{t("Professional billing for freelancers and global enterprises.")}</p>
             </div>
-            <Link to="/tools/invoice" className="flex items-center text-sm font-bold tracking-tight text-zinc-900 hover:translate-x-1 transition-transform mt-6">
+            <div className="flex-1 sm:hidden">
+              <h3 className="text-base font-bold font-headline mb-1 text-zinc-900">{t("Invoice Generator")}</h3>
+              <Link to="/tools/invoice" className="flex items-center text-xs font-bold tracking-tight text-zinc-500">{t("Launch")} <ArrowRight size={14} className="ml-1" /></Link>
+            </div>
+            <Link to="/tools/invoice" className="hidden sm:flex items-center text-sm font-bold tracking-tight text-zinc-900 hover:translate-x-1 transition-transform mt-4 md:mt-6">
               {t("Launch Tool")} <ArrowRight size={18} className="ml-2" />
             </Link>
           </div>
 
           {/* Tool Card: Receipt Generator */}
-          <div className="group bg-white p-8 rounded-2xl border border-zinc-200 hover:border-zinc-300 transition-all duration-300 shadow-sm hover:shadow-md flex flex-col justify-between min-h-[320px]">
-            <div>
-              <div className="w-14 h-14 bg-zinc-100 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform text-zinc-900">
-                <Receipt size={28} />
+          <div className="group bg-white p-5 sm:p-6 md:p-8 rounded-2xl border border-zinc-200 hover:border-zinc-300 transition-all duration-300 shadow-sm hover:shadow-md flex flex-row sm:flex-col gap-4 sm:gap-0 items-center sm:items-start sm:justify-between sm:min-h-[280px] md:min-h-[320px]">
+            <div className="shrink-0 sm:w-full">
+              <div className="w-11 h-11 sm:w-14 sm:h-14 bg-zinc-100 rounded-xl flex items-center justify-center sm:mb-5 md:mb-6 group-hover:scale-110 transition-transform text-zinc-900">
+                <Receipt size={22} />
               </div>
-              <h3 className="text-2xl font-bold font-headline mb-3 text-zinc-900">{t("Receipt Generator")}</h3>
-              <p className="text-sm text-zinc-500 leading-snug">{t("Instant digital receipts with custom branding and tax items.")}</p>
+              <h3 className="hidden sm:block text-xl md:text-2xl font-bold font-headline mb-2 md:mb-3 text-zinc-900">{t("Receipt Generator")}</h3>
+              <p className="hidden sm:block text-xs sm:text-sm text-zinc-500 leading-snug">{t("Instant digital receipts with custom branding and tax items.")}</p>
             </div>
-            <Link to="/tools/receipt" className="flex items-center text-sm font-bold tracking-tight text-zinc-900 hover:translate-x-1 transition-transform mt-6">
+            <div className="flex-1 sm:hidden">
+              <h3 className="text-base font-bold font-headline mb-1 text-zinc-900">{t("Receipt Generator")}</h3>
+              <Link to="/tools/receipt" className="flex items-center text-xs font-bold tracking-tight text-zinc-500">{t("Launch")} <ArrowRight size={14} className="ml-1" /></Link>
+            </div>
+            <Link to="/tools/receipt" className="hidden sm:flex items-center text-sm font-bold tracking-tight text-zinc-900 hover:translate-x-1 transition-transform mt-4 md:mt-6">
               {t("Launch Tool")} <ArrowRight size={18} className="ml-2" />
             </Link>
           </div>
 
           {/* Tool Card: Quotation Generator */}
-          <div className="group bg-white p-8 rounded-2xl border border-zinc-200 hover:border-zinc-300 transition-all duration-300 shadow-sm hover:shadow-md flex flex-col justify-between min-h-[320px]">
-            <div>
-              <div className="w-14 h-14 bg-zinc-100 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform text-zinc-900">
-                <FileSignature size={28} />
+          <div className="group bg-white p-5 sm:p-6 md:p-8 rounded-2xl border border-zinc-200 hover:border-zinc-300 transition-all duration-300 shadow-sm hover:shadow-md flex flex-row sm:flex-col gap-4 sm:gap-0 items-center sm:items-start sm:justify-between sm:min-h-[280px] md:min-h-[320px]">
+            <div className="shrink-0 sm:w-full">
+              <div className="w-11 h-11 sm:w-14 sm:h-14 bg-zinc-100 rounded-xl flex items-center justify-center sm:mb-5 md:mb-6 group-hover:scale-110 transition-transform text-zinc-900">
+                <FileSignature size={22} />
               </div>
-              <h3 className="text-2xl font-bold font-headline mb-3 text-zinc-900">{t("Quotation Generator")}</h3>
-              <p className="text-sm text-zinc-500 leading-snug">{t("Send professional quotes that win more high-ticket projects.")}</p>
+              <h3 className="hidden sm:block text-xl md:text-2xl font-bold font-headline mb-2 md:mb-3 text-zinc-900">{t("Quotation Generator")}</h3>
+              <p className="hidden sm:block text-xs sm:text-sm text-zinc-500 leading-snug">{t("Send professional quotes that win more high-ticket projects.")}</p>
             </div>
-            <Link to="/tools/quotation" className="flex items-center text-sm font-bold tracking-tight text-zinc-900 hover:translate-x-1 transition-transform mt-6">
+            <div className="flex-1 sm:hidden">
+              <h3 className="text-base font-bold font-headline mb-1 text-zinc-900">{t("Quotation Generator")}</h3>
+              <Link to="/tools/quotation" className="flex items-center text-xs font-bold tracking-tight text-zinc-500">{t("Launch")} <ArrowRight size={14} className="ml-1" /></Link>
+            </div>
+            <Link to="/tools/quotation" className="hidden sm:flex items-center text-sm font-bold tracking-tight text-zinc-900 hover:translate-x-1 transition-transform mt-4 md:mt-6">
               {t("Launch Tool")} <ArrowRight size={18} className="ml-2" />
             </Link>
           </div>
 
           {/* Tool Card: Estimate Generator */}
-          <div className="group bg-white p-8 rounded-2xl border border-zinc-200 hover:border-zinc-300 transition-all duration-300 shadow-sm hover:shadow-md flex flex-col justify-between min-h-[320px]">
-            <div>
-              <div className="w-14 h-14 bg-zinc-100 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform text-zinc-900">
-                <Calculator size={28} />
+          <div className="group bg-white p-5 sm:p-6 md:p-8 rounded-2xl border border-zinc-200 hover:border-zinc-300 transition-all duration-300 shadow-sm hover:shadow-md flex flex-row sm:flex-col gap-4 sm:gap-0 items-center sm:items-start sm:justify-between sm:min-h-[280px] md:min-h-[320px]">
+            <div className="shrink-0 sm:w-full">
+              <div className="w-11 h-11 sm:w-14 sm:h-14 bg-zinc-100 rounded-xl flex items-center justify-center sm:mb-5 md:mb-6 group-hover:scale-110 transition-transform text-zinc-900">
+                <Calculator size={22} />
               </div>
-              <h3 className="text-2xl font-bold font-headline mb-3 text-zinc-900">{t("Estimate Generator")}</h3>
-              <p className="text-sm text-zinc-500 leading-snug">{t("Quickly draft project estimates with itemized task breakdowns.")}</p>
+              <h3 className="hidden sm:block text-xl md:text-2xl font-bold font-headline mb-2 md:mb-3 text-zinc-900">{t("Estimate Generator")}</h3>
+              <p className="hidden sm:block text-xs sm:text-sm text-zinc-500 leading-snug">{t("Quickly draft project estimates with itemized task breakdowns.")}</p>
             </div>
-            <Link to="/tools/estimate" className="flex items-center text-sm font-bold tracking-tight text-zinc-900 hover:translate-x-1 transition-transform mt-6">
+            <div className="flex-1 sm:hidden">
+              <h3 className="text-base font-bold font-headline mb-1 text-zinc-900">{t("Estimate Generator")}</h3>
+              <Link to="/tools/estimate" className="flex items-center text-xs font-bold tracking-tight text-zinc-500">{t("Launch")} <ArrowRight size={14} className="ml-1" /></Link>
+            </div>
+            <Link to="/tools/estimate" className="hidden sm:flex items-center text-sm font-bold tracking-tight text-zinc-900 hover:translate-x-1 transition-transform mt-4 md:mt-6">
               {t("Launch Tool")} <ArrowRight size={18} className="ml-2" />
             </Link>
           </div>
 
           {/* Tool Card: GST Calculator */}
-          <div className="group bg-zinc-50 p-8 rounded-2xl border border-zinc-200 hover:border-zinc-300 transition-all duration-300 flex flex-col justify-between min-h-[320px] md:col-span-2 lg:col-span-2">
-            <div className="flex flex-col sm:flex-row gap-6 sm:gap-8 items-start sm:items-center">
-              <div className="w-16 h-16 sm:w-20 sm:h-20 bg-white rounded-2xl flex items-center justify-center shrink-0 shadow-sm text-zinc-900">
-                <Percent size={36} />
+          <div className="group bg-zinc-50 p-5 sm:p-6 md:p-8 rounded-2xl border border-zinc-200 hover:border-zinc-300 transition-all duration-300 flex flex-col justify-between sm:min-h-[280px] md:min-h-[320px] sm:col-span-2 lg:col-span-2">
+            <div className="flex flex-row sm:flex-row gap-4 sm:gap-6 md:gap-8 items-center">
+              <div className="w-12 h-12 sm:w-16 sm:h-16 md:w-20 md:h-20 bg-white rounded-2xl flex items-center justify-center shrink-0 shadow-sm text-zinc-900">
+                <Percent size={28} />
               </div>
               <div>
-                <h3 className="text-2xl sm:text-3xl font-bold font-headline mb-3 text-zinc-900">{t("GST Calculator")}</h3>
-                <p className="text-sm sm:text-base text-zinc-500 max-w-sm">{t("Simplify your tax compliance with our regional GST calculator. Supports inclusive and exclusive tax values for rapid accounting.")}</p>
+                <h3 className="text-lg sm:text-2xl md:text-3xl font-bold font-headline mb-1 sm:mb-3 text-zinc-900">{t("GST Calculator")}</h3>
+                <p className="text-xs sm:text-sm md:text-base text-zinc-500 max-w-sm hidden sm:block">{t("Simplify your tax compliance with our regional GST calculator. Supports inclusive and exclusive tax values for rapid accounting.")}</p>
               </div>
             </div>
-            <Link to="/tools/gst" className="flex items-center text-sm font-bold tracking-tight text-zinc-900 hover:translate-x-1 transition-transform mt-6">
+            <Link to="/tools/gst" className="flex items-center text-sm font-bold tracking-tight text-zinc-900 hover:translate-x-1 transition-transform mt-4 md:mt-6">
               {t("Open GST Engine")} <ArrowUpRight size={18} className="ml-2" />
             </Link>
           </div>
@@ -140,22 +156,22 @@ export default function Tools() {
           </div>
 
           {/* Tool Card: Currency Converter (Highlight) */}
-          <div className="group bg-zinc-900 text-white p-8 md:p-10 rounded-2xl transition-all duration-300 flex flex-col justify-between min-h-[320px] md:col-span-2 lg:col-span-4 relative overflow-hidden">
-            <div className="relative z-10 flex flex-col md:flex-row md:items-center justify-between gap-8 h-full">
+          <div className="group bg-zinc-900 text-white p-6 sm:p-8 md:p-10 rounded-2xl transition-all duration-300 flex flex-col justify-between min-h-[240px] sm:min-h-[320px] col-span-1 sm:col-span-2 lg:col-span-4 relative overflow-hidden">
+            <div className="relative z-10 flex flex-col md:flex-row md:items-center justify-between gap-5 md:gap-8 h-full">
               <div className="max-w-xl">
-                <div className="inline-flex items-center px-3 py-1 bg-white/10 rounded-full text-[10px] font-bold uppercase tracking-widest mb-6">
+                <div className="inline-flex items-center px-3 py-1 bg-white/10 rounded-full text-[10px] font-bold uppercase tracking-widest mb-4 md:mb-6">
                   {t("Real-Time Updates")}
                 </div>
-                <h3 className="text-3xl sm:text-4xl md:text-5xl font-extrabold font-headline mb-4 tracking-tighter text-balance">
+                <h3 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-extrabold font-headline mb-3 md:mb-4 tracking-tighter text-balance">
                   {t("Global Currency Engine")}
                 </h3>
-                <p className="text-base sm:text-lg opacity-80 font-body max-w-sm md:max-w-xl">
+                <p className="text-sm sm:text-base md:text-lg opacity-80 font-body max-w-sm md:max-w-xl">
                   {t("Convert 160+ currencies with institutional-grade exchange rates. Built for cross-border commerce and digital nomads.")}
                 </p>
               </div>
-              <div className="flex items-center justify-start md:justify-end mt-4 md:mt-0">
-                <Link to="/tools/currency" className="bg-white text-zinc-900 px-8 py-4 rounded-full font-bold flex items-center gap-3 hover:scale-105 transition-transform shadow-xl">
-                  {t("Start Converting")} <Globe size={20} />
+              <div className="flex items-center justify-start md:justify-end mt-2 md:mt-0 shrink-0">
+                <Link to="/tools/currency" className="w-full sm:w-auto text-center bg-white text-zinc-900 px-6 sm:px-8 py-3 sm:py-4 rounded-full font-bold flex items-center justify-center gap-3 hover:scale-105 transition-transform shadow-xl">
+                  {t("Start Converting")} <Globe size={18} />
                 </Link>
               </div>
             </div>
@@ -169,13 +185,13 @@ export default function Tools() {
       </section>
 
       {/* Live Ledger Feature (Asymmetric Layout) */}
-      <section className="max-w-7xl mx-auto px-4 md:px-8 mt-32 md:mt-40">
-        <div className="grid grid-cols-12 items-center gap-12 md:gap-16">
+      <section className="max-w-7xl mx-auto px-4 md:px-8 mt-12 md:mt-32 lg:mt-40">
+        <div className="grid grid-cols-12 items-center gap-8 md:gap-12 lg:gap-16">
           <div className="col-span-12 lg:col-span-5">
-            <h2 className="text-4xl md:text-5xl font-headline font-black mb-6 text-zinc-900 tracking-tighter leading-tight">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-headline font-black mb-4 md:mb-6 text-zinc-900 tracking-tighter leading-tight">
               {t("The Live Ledger Advantage.")}
             </h2>
-            <p className="text-zinc-500 mb-10 text-lg leading-relaxed">
+            <p className="text-sm sm:text-base md:text-lg text-zinc-500 mb-6 md:mb-10 leading-relaxed">
               {t("Every tool in our directory integrates seamlessly with our flagship Live Ledger technology, allowing you to preview complex financial documents in real-time as you type.")}
             </p>
             

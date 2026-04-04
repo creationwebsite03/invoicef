@@ -29,7 +29,7 @@ export interface Invoice {
   id?: string;
   userId?: string;
   type: "invoice" | "receipt" | "quotation" | "estimate";
-  template: "modern" | "professional" | "creative";
+  template: "modern" | "professional" | "creative" | "minimal" | "executive" | "startup" | "bold";
   invoiceNumber: string;
   issueDate: string;
   dueDate: string;

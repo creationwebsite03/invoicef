@@ -37,6 +37,13 @@ export default function Layout({ children }: { children: React.ReactNode }) {
     return () => document.removeEventListener("mousedown", handleClickOutside);
   }, []);
 
+  // Global login modal trigger — any component can dispatch this event
+  useEffect(() => {
+    const handleOpenLogin = () => setIsLoginModalOpen(true);
+    document.addEventListener("open-login-modal", handleOpenLogin);
+    return () => document.removeEventListener("open-login-modal", handleOpenLogin);
+  }, []);
+
   useEffect(() => {
     // Proactively check and enforce defaults if missing
     if (!localStorage.getItem("selectedCountry")) {
