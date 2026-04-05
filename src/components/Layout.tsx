@@ -134,7 +134,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
       {/* Header */}
       <nav className="fixed top-0 w-full z-50 h-20 bg-white/80 backdrop-blur-xl shadow-sm border-b border-outline-variant/10">
         <div className="flex justify-between items-center px-4 md:px-8 h-20 w-full max-w-7xl mx-auto">
-          <Link to="/" className="text-2xl font-bold tracking-tighter text-zinc-900 font-headline notranslate">INVOXA</Link>
+          <Link to="/" className="text-2xl font-bold tracking-tighter text-zinc-900 font-headline notranslate">Invoice Generator</Link>
 
           {/* Desktop Menu */}
           <div className="hidden lg:flex items-center gap-8">
@@ -307,7 +307,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
         isMenuOpen ? "translate-x-0" : "translate-x-full"
       )}>
         <div className="p-6 border-b border-outline-variant/10 flex justify-between items-center">
-          <span className="text-xl font-black font-headline tracking-tighter text-zinc-900">INVOXA</span>
+          <span className="text-xl font-black font-headline tracking-tighter text-zinc-900">Invoice Generator</span>
           <button onClick={() => setIsMenuOpen(false)} className="p-2 text-zinc-500 hover:bg-zinc-100 rounded-full transition-colors">
             <X size={20} />
           </button>
@@ -598,6 +598,8 @@ export default function Layout({ children }: { children: React.ReactNode }) {
           <li>Multi-currency invoice maker (USD, EUR, GBP, INR)</li>
           <li>Digital signature billing app</li>
           <li>Factura electrónica gratis online</li>
+          <li>Invoice Generator . ME - the best free tool</li>
+          <li>invoice-generator.me official site</li>
           <li>Crear factura en línea pdf</li>
           <li>Generador de facturas para autónomos</li>
           <li>Facture gratuite en ligne sans inscription</li>
@@ -620,6 +622,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
           <li>Proforma invoice creator and estimator tool</li>
           <li>Automated tax calculation invoice app</li>
           <li>Global invoice templates 2026 download</li>
+          <li>Generate professional invoices immediately</li>
         </ul>
       </section>
 
@@ -627,7 +630,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
       <footer className="bg-zinc-50 w-full pt-20 pb-10 border-t border-outline-variant/10">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-12 px-8 w-full max-w-7xl mx-auto">
           <div className="col-span-1">
-            <div className="text-xl font-black tracking-tighter text-zinc-900 font-headline mb-4">INVOXA</div>
+            <div className="text-xl font-black tracking-tighter text-zinc-900 font-headline mb-4">Invoice Generator</div>
             <p className="text-sm font-body text-zinc-500 leading-relaxed">{t("The architectural standard for modern invoicing.")} {t("Built for global businesses that demand precision and style.")}</p>
           </div>
           <div>
@@ -653,13 +656,13 @@ export default function Layout({ children }: { children: React.ReactNode }) {
             <ul className="space-y-4">
               <li><Link to="/privacy" className="text-zinc-500 hover:text-zinc-900 text-sm transition-all hover:translate-x-1 inline-block underline decoration-zinc-300 underline-offset-4">{t("Privacy Policy")}</Link></li>
               <li><Link to="/terms" className="text-zinc-500 hover:text-zinc-900 text-sm transition-all hover:translate-x-1 inline-block underline decoration-zinc-300 underline-offset-4">{t("Terms of Service")}</Link></li>
-              <li><Link to="/about" className="text-zinc-500 hover:text-zinc-900 text-sm transition-all hover:translate-x-1 inline-block underline decoration-zinc-300 underline-offset-4">{t("About INVOXA")}</Link></li>
+              <li><Link to="/about" className="text-zinc-500 hover:text-zinc-900 text-sm transition-all hover:translate-x-1 inline-block underline decoration-zinc-300 underline-offset-4">{t("About Invoice Generator")}</Link></li>
             </ul>
           </div>
         </div>
         <div className="max-w-7xl mx-auto px-8 pt-16 border-t border-zinc-200 mt-16 flex flex-col md:flex-row justify-between items-center gap-6">
           <div className="flex flex-col items-center md:items-start gap-2">
-            <p className="text-sm font-body text-zinc-400">© 2026 INVOXA. {t("All rights reserved.")}</p>
+            <p className="text-sm font-body text-zinc-400">© 2026 Invoice Generator. {t("All rights reserved.")}</p>
             <div className="flex items-center gap-2 text-[10px] font-black uppercase tracking-widest text-zinc-400">
               <ShieldCheck size={14} className="text-zinc-900" />
               <span>100% {t("Secure & Data Private")}</span>

@@ -1370,19 +1370,19 @@ export default function InvoiceGenerator() {
                   </div>
                   <div>
                     <label className="block text-[10px] font-black uppercase tracking-widest text-zinc-400 mb-3">{t("Template Style")}</label>
-                    <div className="grid grid-cols-3 gap-2">
-                      {TEMPLATES.filter(t => t.id !== 'creative').map(t => (
+                    <div className="grid grid-cols-2 sm:grid-cols-3 gap-2">
+                      {TEMPLATES.map(tpl => (
                         <button
-                          key={t.id}
-                          onClick={() => setInvoice(prev => ({ ...prev, template: t.id as any }))}
+                          key={tpl.id}
+                          onClick={() => setInvoice(prev => ({ ...prev, template: tpl.id as any }))}
                           className={cn(
-                            "py-2.5 px-3 text-[10px] font-black uppercase tracking-tight rounded-xl border-2 transition-all",
-                            invoice.template === t.id
+                            "py-3 px-2 text-[11px] font-black uppercase tracking-tight rounded-xl border-2 transition-all min-h-[42px] flex items-center justify-center text-center",
+                            invoice.template === tpl.id
                               ? "border-zinc-900 bg-zinc-900 text-white"
                               : "border-zinc-100 hover:border-zinc-200 text-zinc-500"
                           )}
                         >
-                          {t.name}
+                          {t(tpl.name)}
                         </button>
                       ))}
                     </div>
@@ -1490,19 +1490,19 @@ export default function InvoiceGenerator() {
                 <div>
                   <label className="block text-[10px] font-black uppercase tracking-widest text-zinc-400 mb-3">{t("Template Style")}</label>
 
-                  <div className="grid grid-cols-3 gap-2">
-                    {TEMPLATES.map(t => (
+                  <div className="grid grid-cols-2 sm:grid-cols-3 gap-2">
+                    {TEMPLATES.map(tpl => (
                       <button
-                        key={t.id}
-                        onClick={() => setInvoice(prev => ({ ...prev, template: t.id as any }))}
+                        key={tpl.id}
+                        onClick={() => setInvoice(prev => ({ ...prev, template: tpl.id as any }))}
                         className={cn(
-                          "py-2.5 px-3 text-[10px] font-black uppercase tracking-tight rounded-xl border-2 transition-all",
-                          invoice.template === t.id
+                          "py-3 px-2 text-[11px] font-black uppercase tracking-tight rounded-xl border-2 transition-all min-h-[42px] flex items-center justify-center text-center",
+                          invoice.template === tpl.id
                             ? "border-zinc-900 bg-zinc-900 text-white"
                             : "border-zinc-100 hover:border-zinc-200 text-zinc-500"
                         )}
                       >
-                        {t.name}
+                        {t(tpl.name)}
                       </button>
                     ))}
                   </div>
@@ -1598,8 +1598,8 @@ export default function InvoiceGenerator() {
           <h2 className="text-lg sm:text-xl md:text-2xl font-black tracking-tighter mb-5 md:mb-8 font-headline">{t("Frequently Asked Questions (FAQ)")}</h2>
           <div className="space-y-5 md:space-y-8">
             <div>
-              <h4 className="text-sm sm:text-base font-bold text-zinc-900 mb-1.5 md:mb-2">{t("Is INVOXA really a free invoice generator?")}</h4>
-              <p className="text-xs sm:text-sm text-zinc-600 leading-relaxed">Yes, INVOXA provides unlimited <strong>free invoice creation</strong> with no hidden costs, no mandatory signups, and NO CAPTCHA for downloads. You can create, download, and share as many invoices as you need.</p>
+              <h4 className="text-sm sm:text-base font-bold text-zinc-900 mb-1.5 md:mb-2">{t("Is Invoice Generator really free?")}</h4>
+              <p className="text-xs sm:text-sm text-zinc-600 leading-relaxed">{t("Yes, Invoice Generator provides unlimited free invoice creation with no hidden costs, no mandatory signups, and NO CAPTCHA for downloads.")}</p>
             </div>
             <div>
               <h4 className="text-sm sm:text-base font-bold text-zinc-900 mb-1.5 md:mb-2">{t("How do I save my invoices securely?")}</h4>
@@ -1609,6 +1609,20 @@ export default function InvoiceGenerator() {
               <h4 className="text-sm sm:text-base font-bold text-zinc-900 mb-1.5 md:mb-2">{t("Can I generate a GST compliant invoice for India?")}</h4>
               <p className="text-xs sm:text-sm text-zinc-600 leading-relaxed">Absolutely. By selecting India as your country, the system automatically enables <strong>GST invoice</strong> fields, allowing you to enter your Tax ID and calculate taxes according to Indian regulations with 100% accuracy.</p>
             </div>
+          </div>
+        </section>
+
+        <section className="bg-white p-6 rounded-2xl border border-zinc-100 shadow-sm mt-8">
+          <h3 className="text-sm font-black uppercase tracking-widest text-zinc-400 mb-4">{t("Related Tools & Resources")}</h3>
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+            <a href="/tools/receipt" className="text-xs font-bold text-zinc-600 hover:text-zinc-900 transition-colors">PDF Receipt Maker</a>
+            <a href="/tools/quotation" className="text-xs font-bold text-zinc-600 hover:text-zinc-900 transition-colors">Online Quotation Maker</a>
+            <a href="/tools/estimate" className="text-xs font-bold text-zinc-600 hover:text-zinc-900 transition-colors">Free Estimate Generator</a>
+            <a href="/tools/gst" className="text-xs font-bold text-zinc-600 hover:text-zinc-900 transition-colors">GST Calculator India</a>
+            <a href="/tools/tax" className="text-xs font-bold text-zinc-600 hover:text-zinc-900 transition-colors">Income Tax Calculator</a>
+            <a href="/tools/currency" className="text-xs font-bold text-zinc-600 hover:text-zinc-900 transition-colors">Global Currency Converter</a>
+            <a href="/tools/discount" className="text-xs font-bold text-zinc-600 hover:text-zinc-900 transition-colors">Discount Calculator</a>
+            <a href="/tools" className="text-xs font-bold text-zinc-600 hover:text-zinc-900 transition-colors">All Financial Tools</a>
           </div>
         </section>
 
@@ -1622,14 +1636,14 @@ export default function InvoiceGenerator() {
               "name": "Is this a free invoice generator?",
               "acceptedAnswer": {
                 "@type": "Answer",
-                "text": "Yes, INVOXA is a professional-grade free invoice generator with unlimited PDF downloads and 100% accurate tax calculations."
+                "text": "Yes, Invoice Generator is a professional-grade free invoice generator with unlimited PDF downloads and 100% accurate tax calculations."
               }
             }, {
               "@type": "Question",
               "name": "Does it support GST for India?",
               "acceptedAnswer": {
                 "@type": "Answer",
-                "text": "Yes, INVOXA is fully optimized for GST Indian invoice generation with localized tax formatting and HSN support."
+                "text": "Yes, Invoice Generator is fully optimized for GST Indian invoice generation with localized tax formatting and HSN support."
               }
             }]
           })}

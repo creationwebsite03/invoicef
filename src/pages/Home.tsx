@@ -35,9 +35,9 @@ export default function Home() {
   return (
     <div className="overflow-hidden">
       <SEO 
-        title="INVOXA | World's #1 Free Professional Invoice Generator Online"
-        description="Create professional PDF invoices in 30 seconds with INVOXA. No registration required. Multi-currency, GST/VAT compliant, and global language support."
-        keywords="free invoice generator, invoice maker, online billing software, gst invoice india, receipt maker"
+        title="Invoice Generator | #1 Free Professional Online Billing Tool"
+        description="Create professional PDF invoices in 30 seconds with Invoice Generator. The world's most trusted free invoice maker for freelancers and small businesses. No registration required."
+        keywords="invoice generator, free invoice maker, online invoice generator, create invoice online, billing software, gst invoice generator, best invoice maker 2026"
       />
       {/* Hero Section */}
       <header className="pt-12 md:pt-20 pb-12 md:pb-24 px-4 sm:px-6 md:px-8 max-w-7xl mx-auto">
@@ -49,7 +49,7 @@ export default function Home() {
             className="lg:col-span-7"
           >
             <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-8xl font-headline font-extrabold tracking-tighter leading-[0.95] text-zinc-900 mb-5 md:mb-8 text-balance">
-              {t("Create Professional")} <span className="block mt-1 md:mt-2">{t("Invoice in 30 Seconds")}</span>
+              {t("Free Online")} <span className="block mt-1 md:mt-2">{t("Invoice Generator")}</span>
             </h1>
             <p className="text-base sm:text-lg md:text-xl text-zinc-500 max-w-xl mb-8 md:mb-12 leading-relaxed font-medium">
               {t("Free invoice generator used by freelancers and businesses worldwide.")}
@@ -213,9 +213,9 @@ export default function Home() {
       <section className="bg-zinc-50 py-12 md:py-24 border-t border-zinc-100">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 md:px-8 space-y-10 md:space-y-16">
           <div className="prose prose-zinc prose-sm max-w-none">
-            <h2 className="text-xl sm:text-2xl md:text-3xl font-bold font-headline tracking-tighter mb-4 md:mb-8 text-zinc-900">{t("World's Most Advanced Free Invoice Generator")}</h2>
+            <h2 className="text-xl sm:text-2xl md:text-3xl font-bold font-headline tracking-tighter mb-4 md:mb-8 text-zinc-900">{t("The World's Most Trusted Free Invoice Generator")}</h2>
             <p className="text-sm md:text-base text-zinc-600 leading-relaxed mb-4 md:mb-6">
-              INVOXA is the architectural standard for modern business transactions. Our <strong>free invoice maker</strong> 
+              Invoice Generator is the architectural standard for modern business transactions. Our <strong>free invoice maker</strong> 
               is designed to provide freelancers, small business owners, and global enterprises with a 
               professional-grade tool to generate, manage, and download high-resolution PDF invoices instantly. 
               With no registration required, you can create a <strong>GST invoice for India</strong>, a 
@@ -224,7 +224,7 @@ export default function Home() {
             <p className="text-zinc-600 leading-relaxed">
               Our 100% free platform supports 160+ currencies and real-time tax calculations, making it the 
               premier <strong>online billing software</strong> alternative for contractors and digital nomads. 
-              Whether you need to prepare professional quotes, estimates, or sales receipts, INVOXA 
+              Whether you need to prepare professional quotes, estimates, or sales receipts, Invoice Generator 
               delivers institutional-grade precision with every document.
             </p>
           </div>
@@ -254,8 +254,8 @@ export default function Home() {
             <h2 className="text-lg sm:text-xl md:text-2xl font-black font-headline tracking-tighter mb-6 md:mb-10 text-zinc-900">{t("Frequently Asked Questions")}</h2>
             <div className="space-y-5 md:space-y-8">
               <div>
-                <h4 className="text-sm sm:text-base font-bold text-zinc-900 mb-1.5 md:mb-2">{t("Is INVOXA completely free to use?")}</h4>
-                <p className="text-xs sm:text-sm text-zinc-600 leading-relaxed">Yes, INVOXA is a 100% <strong>free invoice generator</strong>. We provide unlimited access to our PDF creation tools, tax calculators, and digital signature features with no hidden costs and no subscription fees.</p>
+                <h4 className="text-sm sm:text-base font-bold text-zinc-900 mb-1.5 md:mb-2">{t("Is Invoice Generator completely free?")}</h4>
+                <p className="text-xs sm:text-sm text-zinc-600 leading-relaxed">Yes, Invoice Generator is a 100% <strong>free invoice generator</strong>. We provide unlimited access to our PDF creation tools, tax calculators, and digital signature features with no hidden costs and no subscription fees.</p>
               </div>
               <div>
                 <h4 className="text-sm sm:text-base font-bold text-zinc-900 mb-1.5 md:mb-2">{t("Can I download my invoices as PDF without an account?")}</h4>
@@ -263,7 +263,7 @@ export default function Home() {
               </div>
               <div>
                 <h4 className="text-sm sm:text-base font-bold text-zinc-900 mb-1.5 md:mb-2">{t("Does it support GST billing for India?")}</h4>
-                <p className="text-xs sm:text-sm text-zinc-600 leading-relaxed">Yes, INVOXA is fully optimized for Indian businesses. You can easily generate <strong>GST compliant invoices</strong>, including HSN codes and GSTIN details, using our specialized Indian business localization.</p>
+                <p className="text-xs sm:text-sm text-zinc-600 leading-relaxed">Yes, Invoice Generator is fully optimized for Indian businesses. You can easily generate <strong>GST compliant invoices</strong>, including HSN codes and GSTIN details, using our specialized Indian business localization.</p>
               </div>
             </div>
           </div>

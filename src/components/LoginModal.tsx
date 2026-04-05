@@ -66,14 +66,14 @@ export default function LoginModal({ isOpen, onClose }: LoginModalProps) {
               <div className="mb-8 relative group">
                 <img 
                   src="/favicon.png" 
-                  alt="INVOXA Logo" 
+                  alt="Invoice Generator Logo" 
                   className="w-16 h-16 transition-transform group-hover:rotate-12 duration-500 shadow-xl rounded-[1.5rem]" 
                 />
               </div>
 
               <div className="text-center mb-10">
                 <h2 className="text-2xl font-bold text-zinc-900 tracking-tight mb-2">
-                  {t("Welcome to INVOXA")}
+                  {t("Welcome to Invoice Generator")}
                 </h2>
                 <p className="text-[11px] text-zinc-400 font-medium uppercase tracking-[0.15em] mx-auto opacity-70">
                   {t("Secured by Google Cloud")}

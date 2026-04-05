@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://invoxa.com/sitemap.xml
+Sitemap: https://invoice-generator.me/sitemap.xml

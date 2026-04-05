@@ -8,7 +8,7 @@ interface SEOProps {
 
 const SEO: React.FC<SEOProps> = ({ title, description, keywords }) => {
   useEffect(() => {
-    const baseTitle = "INVOXA";
+    const baseTitle = "Invoice Generator";
     const tagline = "Free Professional Invoice Generator";
     let finalTitle = "";
     
