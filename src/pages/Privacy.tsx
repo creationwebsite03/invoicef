@@ -3,7 +3,7 @@ import { useTranslation } from "react-i18next";
 
 export default function Privacy() {
   const { t } = useTranslation();
-  
+
   return (
     <div className="max-w-4xl mx-auto px-8 py-20 text-zinc-900 animate-in fade-in slide-in-from-bottom-4 duration-500">
       <h1 className="text-4xl md:text-5xl font-black font-headline tracking-tight text-primary mb-8">{t("Privacy Policy")}</h1>
@@ -33,7 +33,7 @@ export default function Privacy() {
         <section>
           <h2 className="text-2xl font-bold mb-4 font-headline text-zinc-900">4. Cookies and Local Storage</h2>
           <p className="text-zinc-600 leading-relaxed">
-            INVOXA uses local storage to remember your preferences (like your preferred language and theme) and to keep your session active. We do not use intrusive tracking cookies.
+            Invoice Generatoruses local storage to remember your preferences (like your preferred language and theme) and to keep your session active. We do not use intrusive tracking cookies.
           </p>
         </section>
       </div>

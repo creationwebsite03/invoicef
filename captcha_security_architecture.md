@@ -1,4 +1,4 @@
-# INVOXA CAPTCHA Security Architecture
+# Invoice GeneratorCAPTCHA Security Architecture
 
 This document outlines the professional SaaS security layer implemented for the **INVOXA** PDF download system.
 

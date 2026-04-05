@@ -12,7 +12,7 @@
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-XC605VPHDB"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
+    function gtag() { dataLayer.push(arguments); }
     gtag('js', new Date());
 
     gtag('config', 'G-XC605VPHDB');
@@ -47,7 +47,7 @@
   <!-- Open Graph / Facebook -->
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://invoice-generator.me/" />
-  <meta property="og:title" content="INVOXA | Free Professional Invoice Generator Online" />
+  <meta property="og:title" content="Invoice Generator| Free Professional Invoice Generator Online" />
   <meta property="og:description"
     content="Generate beautiful, print-ready PDF invoices, estimates, and receipts globally. Multi-currency, automated tax, and secure digital signatures." />
   <meta property="og:image" content="https://invoice-generator.me/og-image.jpg" />
@@ -56,7 +56,7 @@
   <!-- Twitter / X -->
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:url" content="https://invoice-generator.me/" />
-  <meta name="twitter:title" content="INVOXA | Create Professional Invoices in 30 Seconds" />
+  <meta name="twitter:title" content="Invoice Generator| Create Professional Invoices in 30 Seconds" />
   <meta name="twitter:description"
     content="The ultimate free invoice maker for freelancers and small businesses worldwide. No signup required." />
   <meta name="twitter:image" content="https://invoice-generator.me/og-image.jpg" />
@@ -162,22 +162,60 @@
     }
   </script>
   <!-- Non-blocking Google Translate Load: stay idle until main UI is ready -->
-  <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"
-    async defer></script>
+  <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit" async
+    defer></script>
   <style>
     /* CRITICAL PATH CSS: Inlined to prevent render-blocking Round Trips */
-    :root { --font-headline: 'Poppins', sans-serif; --font-body: 'Inter', sans-serif; }
-    html, body { margin: 0; padding: 0; background-color: #ffffff; color: #18181b; font-family: var(--font-body); -webkit-font-smoothing: antialiased; }
-    #root { min-height: 100vh; }
-    
+    :root {
+      --font-headline: 'Poppins', sans-serif;
+      --font-body: 'Inter', sans-serif;
+    }
+
+    html,
+    body {
+      margin: 0;
+      padding: 0;
+      background-color: #ffffff;
+      color: #18181b;
+      font-family: var(--font-body);
+      -webkit-font-smoothing: antialiased;
+    }
+
+    #root {
+      min-height: 100vh;
+    }
+
     /* Prevent the ugly and slow Google Translate top banner from showing */
-    .goog-te-banner-frame, .goog-te-balloon-frame, iframe#goog-te-menu-frame,
-    .goog-te-menu-value, .goog-te-gadget-icon, .goog-te-gadget-simple span { display: none !important; }
-    body { top: 0 !important; position: static !important; }
-    .goog-logo-link { display: none !important; }
-    .goog-te-gadget { color: transparent !important; }
-    .goog-te-balloon-frame { display: none !important; }
-    font { background-color: transparent !important; box-shadow: none !important; }
+    .goog-te-banner-frame,
+    .goog-te-balloon-frame,
+    iframe#goog-te-menu-frame,
+    .goog-te-menu-value,
+    .goog-te-gadget-icon,
+    .goog-te-gadget-simple span {
+      display: none !important;
+    }
+
+    body {
+      top: 0 !important;
+      position: static !important;
+    }
+
+    .goog-logo-link {
+      display: none !important;
+    }
+
+    .goog-te-gadget {
+      color: transparent !important;
+    }
+
+    .goog-te-balloon-frame {
+      display: none !important;
+    }
+
+    font {
+      background-color: transparent !important;
+      box-shadow: none !important;
+    }
   </style>
 </head>
 

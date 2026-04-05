@@ -1,8 +1,12 @@
 {
   "short_name": "INVOXA",
-  "name": "INVOXA | Top Free Professional Invoice & Billing App",
+  "name": "Invoice Generator| Top Free Professional Invoice & Billing App",
   "description": "Create professional invoices, receipts, and estimates in seconds. Global multi-currency support, tax calculation, and digital signatures. No signup required. Best free invoice maker app.",
-  "categories": ["business", "finance", "productivity"],
+  "categories": [
+    "business",
+    "finance",
+    "productivity"
+  ],
   "id": "/?source=pwa",
   "start_url": "/?source=pwa",
   "display": "standalone",

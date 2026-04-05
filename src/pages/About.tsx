@@ -12,7 +12,7 @@ export default function About() {
       <section className="relative py-24 overflow-hidden">
         <div className="absolute top-0 right-0 w-1/2 h-full bg-primary/5 rounded-bl-[20rem] -z-10"></div>
         <div className="max-w-7xl mx-auto px-4 md:px-8">
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             className="max-w-3xl"
@@ -21,7 +21,7 @@ export default function About() {
               {t("Precision Billing for the Global Elite.")}
             </h1>
             <p className="text-xl text-on-surface-variant font-body leading-relaxed mb-12">
-              {t("INVOXA was born from a simple observation: most invoicing tools are either too complex for freelancers or too rigid for global enterprises. We built the middle ground—a high-performance financial arsenal that balances architectural precision with effortless style.")}
+              {t("Invoice Generatorwas born from a simple observation: most invoicing tools are either too complex for freelancers or too rigid for global enterprises. We built the middle ground—a high-performance financial arsenal that balances architectural precision with effortless style.")}
             </p>
           </motion.div>
         </div>
@@ -37,7 +37,7 @@ export default function About() {
               { icon: Globe, title: t("Borderless Commerce"), desc: t("Support for 160+ currencies and regional tax compliance out of the box.") },
               { icon: Users, title: t("Human Centric"), desc: t("Designed for the people behind the numbers, not just the spreadsheets.") }
             ].map((value, i) => (
-              <motion.div 
+              <motion.div
                 key={i}
                 initial={{ opacity: 0, scale: 0.9 }}
                 whileInView={{ opacity: 1, scale: 1 }}

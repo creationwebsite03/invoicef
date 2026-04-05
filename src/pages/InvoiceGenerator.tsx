@@ -766,7 +766,7 @@ export default function InvoiceGenerator() {
     <div className="min-h-screen bg-[#f8fafc] antialiased pb-20">
       <SEO
         title={`${t(docType.type.charAt(0).toUpperCase() + docType.type.slice(1))} Designer`}
-        description={`Create professional ${docType.type}s with INVOXA - the world's #1 free global billing designer for 2026. 100% accurate GST calculations, multicurrency support, and elite PDF exports.`}
+        description={`Create professional ${docType.type}s with Invoice Generator- the world's #1 free global billing designer for 2026. 100% accurate GST calculations, multicurrency support, and elite PDF exports.`}
         keywords={`free ${docType.type} generator, online ${docType.type} maker, professional ${docType.type} template, ${docType.type} pdf download, gst invoice software, 2026 small business tools`}
       />
 
@@ -1571,7 +1571,7 @@ export default function InvoiceGenerator() {
           <p className="text-sm text-zinc-600 leading-relaxed mb-4">
             Welcome to the most advanced <strong>free invoice generator</strong> designed for the 2026 global economy.
             Whether you are a freelancer in India needing a <strong>GST invoice</strong>, or a startup in the US requiring
-            professional <strong>online invoice PDF</strong> downloads, INVOXA is built for you. Our tool is
+            professional <strong>online invoice PDF</strong> downloads, Invoice Generatoris built for you. Our tool is
             completely free forever, ensuring you can manage your billing without any overhead.
           </p>
         </section>
@@ -1587,7 +1587,7 @@ export default function InvoiceGenerator() {
           <section className="space-y-3">
             <h3 className="text-base sm:text-lg md:text-xl font-bold font-headline">{t("Global Currency & Tax Support")}</h3>
             <p className="text-xs sm:text-sm text-zinc-500 leading-relaxed">
-              INVOXA supports 50+ currencies including USD, EUR, INR, and GBP. Automatic tax calculations handle
+              Invoice Generatorsupports 50+ currencies including USD, EUR, INR, and GBP. Automatic tax calculations handle
               everything from VAT to GST smoothly, making it the perfect <strong>online billing software</strong>
               alternative for international contractors.
             </p>
@@ -1603,7 +1603,7 @@ export default function InvoiceGenerator() {
             </div>
             <div>
               <h4 className="text-sm sm:text-base font-bold text-zinc-900 mb-1.5 md:mb-2">{t("How do I save my invoices securely?")}</h4>
-              <p className="text-xs sm:text-sm text-zinc-600 leading-relaxed">INVOXA uses a secure <strong>Cloud Sync</strong> system. By creating a free account, all your invoices, client details, and business settings are instantly synced to our encrypted <strong>Firebase Firestore</strong> database, allowing you to access your billing data from any device in the world safely.</p>
+              <p className="text-xs sm:text-sm text-zinc-600 leading-relaxed">Invoice Generatoruses a secure <strong>Cloud Sync</strong> system. By creating a free account, all your invoices, client details, and business settings are instantly synced to our encrypted <strong>Firebase Firestore</strong> database, allowing you to access your billing data from any device in the world safely.</p>
             </div>
             <div>
               <h4 className="text-sm sm:text-base font-bold text-zinc-900 mb-1.5 md:mb-2">{t("Can I generate a GST compliant invoice for India?")}</h4>
